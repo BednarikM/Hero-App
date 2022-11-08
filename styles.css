@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+/* 
+
+COLORS
+#232323
+#f8f8f8
+#13afce
+#27ae60
+#e74c3c
+
+
+*/
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* BODY DEFAULT SETTIGNS */
+
+body {
+  font-family: sans-serif;
+  background: #f8f8f8;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* MAIN PAGE SETTINGS */
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.page-header {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background: #13afce;
+}
+
+.page-main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background: #f8f8f8;
+}
+
+.page-footer {
+  display: flex;
+  height: 50px;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  background: #292929;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
+/* APP CONTAINER SETTINGS */
+
+.app-container {
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.info {
+  width: 660px;
+}
+
+/* TABLE COMPONENT SETTINGS */
+
+/* BORDER RADIUS SET ON TABLE COMPONENT 
+TO AVOID SQUARE SHADOW AROUND CORNERS */
+
+.table-component {
+  border-radius: 10px 10px 10px 10px;
+  border-collapse: collapse;
+  box-shadow: 0px 5px 20px rgba(100, 100, 100, 0.3);
+}
+
+.thead-row th:first-of-type {
+  border-top-left-radius: 10px;
+}
+.thead-row th:last-of-type {
+  border-top-right-radius: 10px;
+}
+
+.tbody-row:nth-child(even) {
+  background-color: rgb(230, 230, 230);
+}
+
+.thead-cell {
+  padding: 20px 20px;
+  background: #232323;
+  color: #f8f8f8;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tbody-cell {
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 20px 25px;
+  text-align: center;
+  color: rgb(35, 35, 35);
+}
+
+.tbody-btn-cell {
+  display: flex;
+  padding: 20px 20px;
+  gap: 20px;
+}
+
+.btn-delete {
+  padding: 4px 10px;
+  justify-content: center;
+  background: rgba(231, 77, 60, 0.3);
+  border: 2px solid #e74c3c;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s ease;
+}
+
+.btn-update {
+  padding: 4px 10px;
+  justify-content: center;
+  background: rgba(19, 175, 206, 0.3);
+  border: 2px solid #13afce;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s ease;
+}
+
+.btn-delete:hover {
+  background-color: #e74c3c;
+}
+
+.btn-update:hover {
+  background-color: #13afce;
+}
+
+/* FORM COMPONENT SETTINGS */
+
+.form-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding-bottom: 30px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(100, 100, 100, 0.3);
+}
+
+.form-header {
+  display: block;
+  width: 100%;
+  padding: 20px 20px;
+  background: rgb(35, 35, 35);
+  color: #f8f8f8;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-component > div {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  gap: 5px;
+}
+
+.form-component div:first-child {
+  margin-top: 40px;
+}
+
+.form-component input {
+  border-radius: 5px;
+  border-style: solid;
+  padding: 10px 20px;
+}
+
+.form-component label {
+  font-weight: bold;
+}
+
+/* SUBMIT BUTTON */
+
+.btn-form {
+  padding: 10px 20px;
+  background-color: hsla(190, 83%, 44%, 0.4);
+  border: 2px solid #13afce;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.btn-form:hover {
+  background-color: #13afce;
+}
+
+/* VALIDATE STYLE CONDITIONS + ERROR MESSAGE */
+
+.invalid {
+  border: 2px solid #e74c3c;
+}
+
+.valid {
+  border: 2px solid #13afce;
+}
+
+.error-message {
+  visibility: hidden;
+  position: absolute;
+  color: #e74d3c00;
+  font-size: 14px;
+  top: 110%;
+  transform: translateX(-30px);
+  transition: all 1s ease;
+}
+
+.invalid ~ .error-message {
+  visibility: visible;
+  color: #e74d3c;
+  transform: translateX(0px);
+}
+
+/* CHECK MARK STYLING */
+
+.check-mark {
+  position: absolute;
+  visibility: hidden;
+  /* 20px label + 5px gap + 6 px (40-28=12/2=6) to get to center of input*/
+  top: 31px;
+  left: 212px;
+  fill: rgb(19, 174, 205);
+}
+
+.valid ~ .check-mark {
+  visibility: visible;
+}
+
+.form-component .form-error-message {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  visibility: hidden;
+}
+
+.form-error-message.is-visible {
+  color: red;
+  visibility: visible;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #232323;
+  background-color: #f8f8f8;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: rgb(19, 174, 205);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.nav a:hover::after,
+.nav .link-active::after {
+  transform: scaleX(1);
+}
